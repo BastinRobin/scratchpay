@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 
-Route::post('/api/v1/businessDates/', 'ApiController@index');
+Route::post('/api/v1/isBusinessDay/', 'ApiController@isBusinessDay');
+Route::get('/api/v1/businessDates/', 'ApiController@getBusinessDates');
+Route::post('/api/v1/businessDates/', 'ApiController@postBusinessDates');
