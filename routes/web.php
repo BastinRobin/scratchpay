@@ -12,7 +12,7 @@
 */
 
 
-
 Route::post('/api/v1/isBusinessDay/', 'ApiController@isBusinessDay');
 Route::get('/api/v1/businessDates/', 'ApiController@getBusinessDates');
 Route::post('/api/v1/businessDates/', 'ApiController@postBusinessDates');
+Route::post('/api/v1/getDates', 'ApiController@getDates');

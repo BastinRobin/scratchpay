@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Redis;
 use Illuminate\Http\Request;
 
 use App\Helpers\CustomCarbon as Carbon;
 use App\Helpers\BusinessDays;
+
 
 
 class ApiController extends Controller
@@ -61,4 +63,21 @@ class ApiController extends Controller
 
     }
 
+
+
+
+    public function getDates(Request $request) {
+
+
+        $response = [
+            "ok" => true,
+            "initialQuery" => $request->input(),
+            "results" => BusinessDays::getDays($request->initialDate, $request->delay)
+        ];
+
+        Redis::publish('BankWire', json_encode($response));
+
+        return response()
+                ->json($response, 200);
+    }
 }
