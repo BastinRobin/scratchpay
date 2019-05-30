@@ -66,8 +66,10 @@ class ApiController extends Controller
 
 
 
+    /**
+     * PUS / SUB Broadcast route
+     */
     public function getDates(Request $request) {
-
 
         $response = [
             "ok" => true,

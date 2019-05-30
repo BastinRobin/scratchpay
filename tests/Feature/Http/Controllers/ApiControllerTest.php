@@ -136,7 +136,7 @@ class ApiControllerTest extends TestCase
             ],
             "results" => [
                 "businessDate" => "2019-01-18T00:00:00.000000Z",
-                "weekendDays" => 6,
+                "weekendDays" => 8,
                 "holidayDays" => 0,
                 "totalDays" => 24
             ]
